@@ -21,30 +21,116 @@ struct CylinderView: View {
                 .scaledToFit()
             
             // Label1
-            Text("Radius")
-            
+            HStack {
+                Text("Radius")
+                    .font(
+                        .largeTitle
+                            .weight(.bold)
+                    )
+                Spacer()
+            }
             // Slider Control1
             Slider(value: $currentCylinder.radius, in: 1...100,
                 step: 1.0
             )
+            HStack {
+                Text("\(currentCylinder.radius) Units")
+                Spacer()
+            }
+            Spacer()
             // Label2
-            Text("Height")
-            
+            HStack {
+                Text("Height")
+                    .font(
+                        .largeTitle
+                            .weight(.bold)
+                    )
+                Spacer()
+            }
             //SliderControl2
             Slider(value: $currentCylinder.height,
                 in: 1...100,
                 step: 1.0
             )
+            HStack {
+                Text("\(currentCylinder.height) Units")
+                Spacer()
+            }
+            .padding(.bottom, 10)
             // OUTPUT
-            Text("Radius is: \(currentCylinder.radius.formatted())")
-            Text("Height is: \(currentCylinder.height.formatted())")
-            Text("Circumference is: \(currentCylinder.circumference.formatted())")
-            Text("Circle Area is: \(currentCylinder.circleArea.formatted())")
-            Text("Total Surface Area is: \(currentCylinder.totalSurfaceArea.formatted())")
-            Text("Volume is: \(currentCylinder.volume.formatted())")
+            HStack {
+                Text("Stats")
+                    .font(
+                        .largeTitle
+                            .weight(.bold)
+                    )
+                Spacer()
+            }
+            Spacer()
+            HStack {
+                Text("Radius: ")
+                    .font(
+                        .system(size: 20)
+                        .weight(.bold)
+                    )
+                Text("\(currentCylinder.radius) Units")
+                Spacer()
+            }
+            .padding(.bottom)
+            
+            HStack {
+                Text("Height: ")
+                    .font(
+                        .system(size: 20)
+                        .weight(.bold)
+                    )
+                Text("\(currentCylinder.height) Units")
+                Spacer()
+            }
+            .padding(.bottom)
+            HStack {
+                Text("Circumference: ")
+                    .font(
+                        .system(size:20)
+                        .weight(.bold)
+                    )
+                Text("\(currentCylinder.circumference) Units")
+                Spacer()
+            }
+            .padding(.bottom)
+            HStack {
+                Text("Area of Circle: ")
+                    .font(
+                        .system(size: 20)
+                        .weight(.bold)
+                    )
+                Text("\(currentCylinder.circleArea) Square Units")
+                Spacer()
+            }
+            .padding(.bottom)
+            HStack {
+                Text("Total Surface Area: ")
+                    .font(
+                        .system(size: 20)
+                        .weight(.bold)
+                    )
+                Text("\(currentCylinder.totalSurfaceArea) Square Units")
+                Spacer()
+            }
+            .padding(.bottom)
+            HStack {
+                Text("Volume: ")
+                    .font(
+                        .system(size: 20)
+                        .weight(.bold)
+                    )
+                Text("\(currentCylinder.volume) Cube Units")
+                Spacer()
+            }
             Spacer()
         }
         .padding()
+       
     }
 }
 
